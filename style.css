@@ -1,0 +1,112 @@
+/*Обнуление*/
+* {padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height: 100%;width: 100%;font-size: 100%;line-height: 1;font-size: 14px;-ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}
+input,button,textarea {font-family: inherit;}
+input::-ms-clear {display: none;}
+button {cursor: pointer;background-color: inherit;}
+button::-moz-focus-inner {padding: 0;border: 0;}
+a,a:visited {text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
+/*--------------------*/
+
+/******************************************************************************************************/
+@font-face {
+  font-family: 'icon';
+  src: url("src/fonts/icomoon.woff2") format("woff2"), url("src/fonts/icomoon.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class*="_icon-"] {
+  font-family: "icon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-unlocked::before {
+  content: "\e990";
+}
+
+._icon-lock::before {
+  content: "\e98f";
+}
+/******************************************************************************************************/
+
+body {
+  overflow: hidden;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.colors {
+  height: 100%;
+  display: flex;
+}
+
+.colors__item {
+  flex: 1 1 calc(100%/8);
+  height: 100%;
+}
+
+.item-colors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-colors__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.colors-item__hex-code {
+  font-size: 30px;
+  font-weight: 600;
+  padding-bottom: 40px;
+  text-shadow: 2px 2px 10px rgb(247, 210, 0);
+}
+
+.colors__lock {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 25px;
+  margin-right: -10px;
+  transition: background-color ease 0.2s 0s;
+  cursor: pointer;
+  border-radius: 10px;
+  text-shadow: 2px 2px 10px rgb(247, 210, 0);
+}
+
+.colors__lock::before {
+  pointer-events: none;
+}
+
+.colors__lock:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.colors__lock._icon-unlocked::before {}
+
+.colors__lock._icon-lock::before {
+  margin-right: -10px;
+}
