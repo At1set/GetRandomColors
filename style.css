@@ -23,7 +23,6 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
   -ms-user-select: none; 
   user-select: none; 
 }
-
 /******************************************************************************************************/
 @font-face {
   font-family: 'icon';
@@ -53,17 +52,15 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 /******************************************************************************************************/
 
-body {
-  overflow: hidden;
-}
-
 .wrapper {
   height: 100%;
+  overflow: hidden;
 }
 
 .colors {
   height: 100%;
   display: flex;
+  overflow: hidden;
 }
 
 .colors__item {
@@ -85,7 +82,7 @@ body {
 }
 
 .item-colors__hex-code {
-  font-size: 30px;
+  font-size: calc(17px + (30 - 17) * ((100vw - 320px) / (1240 - 320)));
   padding-bottom: 40px;
   width: 100%;
   text-align: center;
@@ -179,4 +176,20 @@ body {
 
 .item-colors__lock._icon-lock::before {
   margin-right: -10px;
+}
+
+@media (any-hover: none) {
+  .item-colors__body * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  .item-colors:nth-child(1), 
+  .item-colors:nth-child(2),
+  .item-colors:nth-child(3),
+  .item-colors:nth-child(4) {
+    display: none;
+  }
+
+  i {
+    font-size: calc(17px + (30 - 17) * ((100vw - 320px) / (1240 - 320))) !important; 
+  }
 }
