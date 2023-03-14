@@ -177,8 +177,6 @@ body {
   pointer-events: none;
 }
 
-.item-colors__lock._icon-unlocked::before {}
-
 .item-colors__lock._icon-lock::before {
   margin-right: -10px;
 }
